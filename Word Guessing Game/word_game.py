@@ -6,7 +6,7 @@ print("The animal is very big, vegeterian and it's babies name is calf")
 while count <= 3:
     user_input = input("Enter your word: ")
     count += 1
-    if user_input == word:
+    if user_input.capitalize() == word:
         print(f"{user_input} is correct")
         if hint_count == 0:
             print(f"Number of hints used: {hint_count}")
