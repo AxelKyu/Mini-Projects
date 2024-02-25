@@ -1,6 +1,7 @@
 word = "Elephant"
 count = 0
 score = 0
+print("The animal is very big, vegeterian and it's babies name is calf")
 while count <= 3:
     user_input = input("Enter your word: ")
     count += 1
