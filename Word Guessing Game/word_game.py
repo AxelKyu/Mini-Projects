@@ -1,3 +1,4 @@
+import time
 word = "Elephant"
 count = 0
 score = 0
