@@ -1,13 +1,174 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Qiak Media Services</title>
+    <h1>E</h1>
+    <title>Meliora</title>
+    <script src="https://kit.fontawesome.com/3bea10b698.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap');
 
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: "Kumbh Sans", sans-serif;
+        }
+
+        .navbar {
+            background: #141414;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            position: fixed;
+            top: 0;
+            z-index: 999;
+            width: 100%;
+            transition: top 0.3s;
+        }
+
+        .navbar__container {
+            display: flex;
+            justify-content: space-between;
+            height: 80px;
+            z-index: 1;
+            max-width: 1300px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 50px;
+        }
+
+        #navbar__logo {
+            background-color: #ff8177;
+            background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+            background-size: 100%;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 2rem;
+        }
+
+        .fa-Q {
+            margin-right: 0.5rem;
+        }
+
+        .navbar__menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            text-align: center;
+        }
+
+        .navbar__item {
+            height: 80px;
+        }
+
+        .navbar__link {
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 0 1rem;
+            height: 100%;
+        }
+
+        .navbar__link:hover {
+            color: #f77062;
+            transition: all 0.3s ease;
+        }
+
+        @media screen and (max-width: 960px) {
+            .navbar__container {
+                display: flex;
+                justify-content: space-between;
+                height: 80px;
+                z-index: 1;
+                width: 100%;
+                max-width: 1300px;
+                padding: 0;
+            }
+
+            .navbar__menu {
+                display: grid;
+                grid-template-columns: auto;
+                margin: 0;
+                width: 100%;
+                position: absolute;
+                top: -1000px;
+                opacity: 1;
+                transition: all 0.5s ease;
+                height: 50vh;
+                z-index: -1;
+            }
+
+            .navbar__menu.active {
+                background-color: #131313;
+                top: 100%;
+                opacity: 1;
+                transition: all 0.5s ease;
+                z-index: 99;
+                height: 50vh;
+                font-size: 1.6rem;
+            }
+
+            #navbar__logo {
+                padding-left: 25px;
+            }
+
+            .navbar__toggle .bar {
+                width: 25px;
+                height: 3px;
+                margin: 5px auto;
+                transition: all 0.3s ease-in-out;
+                background: white;
+            }
+
+            .navbar__item {
+                width: 100%;
+            }
+
+            .navbar__link {
+                text-align: center;
+                padding: 2rem;
+                width: 100%;
+                display: table;
+            }
+
+            #mobile-menu {
+                position: absolute;
+                top: 20%;
+                right: 5%;
+                transform: translate(5%, 20%);
+            }
+
+            .navbar__toggle .bar {
+                display: block;
+                cursor: pointer;
+            }
+
+            #mobile-menu.is-active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            #mobile-menu.is-active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            #mobile-menu.is-active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+
         body {
-            background: linear-gradient(to right, #9933ff, #00ccff);
+            background: #141414;
             color: #fff;
             font-family: 'Kumbh Sans', sans-serif;
             margin: 0;
@@ -40,6 +201,7 @@
             width: 300px;
             height: 400px;
             vertical-align: top;
+            position: relative;
         }
 
         .service-card:hover {
@@ -67,6 +229,10 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
             text-decoration: none;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .get-started-btn:hover {
@@ -75,10 +241,36 @@
     </style>
 </head>
 <body>
+    <nav class="navbar" id="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo"><i class="fa-Q"></i> Meliora</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="Services.html" class="navbar__link">Services</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="About-Us.html" class="navbar__link">About</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="index.html" class="navbar__link">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="blog.html" class="navbar__link">Blog</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="Contact-Us.html" class="navbar__link">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <div class="container">
         <div class="title-section">
-            <h1>We offer services</h1>
-            <hr>
+           
         </div>
         <div class="service-cards">
             <div class="service-card">
@@ -113,8 +305,6 @@
             </div>
         </div>
     </div>
-
-    <!--Footer Section-->
     <div class="footer__container">
         <div class="footer__links">
             <div class="footer__links--wrapper">
@@ -150,9 +340,9 @@
         <div class="social__media">
             <div class="social__media--wrap">
                 <div class="footer__logo">
-                    <a href="\" id="footer__logo"><i class="fa-solid fa-feather"></i>Qiak Media</a>
+                    <a href="\" id="footer__logo"><i class="fa-solid fa-feather"></i> Meliora</a>
                 </div>
-                <p class="website__rights">© Qiak Media 2024. All rights reserved</p>
+                <p class="website__rights">© Meliora 2024. All rights reserved</p>
                 <div class="social__icons">
                     <a href="\" class="social__icons--link" target="_blank">
                         <i class="fab fa-facebook"></i>
@@ -176,6 +366,22 @@
             </div>
         </div>
     </div>
-    <script src="app.js"></script>
+
+    <script>
+        let prevScrollpos = window.pageYOffset;
+        const navbar = document.getElementById("navbar");
+
+        window.onscroll = function() {
+            let currentScrollPos = window.pageYOffset;
+
+            if (prevScrollpos > currentScrollPos) {
+                navbar.style.top = "0";
+            } else {
+                navbar.style.top = "-80px";
+            }
+
+            prevScrollpos = currentScrollPos;
+        }
+    </script>
 </body>
 </html>
