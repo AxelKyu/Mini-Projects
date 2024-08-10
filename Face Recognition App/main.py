@@ -11,7 +11,7 @@ counter = 0     # Creating this so the camera doesn't look for face verification
 
 face_match = False
 
-reference_img = cv2.imread("")
+reference_img = cv2.imread("WIN_20240810_11_18_00_Pro.jpg")
 
 def check_face(frame):
     global face_match
